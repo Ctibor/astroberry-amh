@@ -16,10 +16,12 @@ set(CMAKE_CXX_FLAGS "-std=c++0x ${CMAKE_CXX_FLAGS}")
 set(MAKE make)
 
 find_package(INDI REQUIRED)
+find_package(WiringPi REQUIRED)
 
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${INDI_INCLUDE_DIR})
+include_directories(${WiringPi_INCLUDE_DIR})
 
 include_directories(${CMAKE_SOURCE_DIR}/libs/AdafruitStepperMotorHAT_CPP)
 
