@@ -1,14 +1,6 @@
-# Try to find the wiringPi library.
-# This will define:
-#
-# WiringPi_FOUND       - wiringPi library is available
-# WiringPi_INCLUDE_DIR - Where the wiringPi.h header file is
-# WiringPi_LIBRARIES   - The libraries to link in.
-
-find_path(WiringPi_INCLUDE_DIR wiringPi.h)
-find_library(WiringPi_LIBRARY NAMES wiringpi wiringPi)
+find_library(WIRINGPI_LIBRARIES NAMES wiringPi)
+find_path(WIRINGPI_INCLUDE_DIRS NAMES wiringPi.h PATH_SUFFIXES wiringPi)
 
 include(FindPackageHandleStandardArgs)
-find_package_handle_standard_args(WiringPi DEFAULT_MSG WiringPi_INCLUDE_DIR WiringPi_LIBRARY)
-set(WiringPi_LIBRARIES ${WiringPi_LIBRARY})
-mark_as_advanced(WiringPi_INCLUDE_DIR WiringPi_LIBRARIES WiringPi_LIBRARY) 
+find_package_handle_standard_args(wiringPi DEFAULT_MSG WIRINGPI_LIBRARIES WIRINGPI_INCLUDE_DIRS)
+MARK_AS_ADVANCED(WIRINGPI_INCLUDE_DIRS WIRINGPI_LIBRARIES)

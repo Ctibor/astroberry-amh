@@ -21,7 +21,7 @@ find_package(WiringPi REQUIRED)
 include_directories(${CMAKE_CURRENT_BINARY_DIR})
 include_directories(${CMAKE_CURRENT_SOURCE_DIR})
 include_directories(${INDI_INCLUDE_DIR})
-include_directories(${WiringPi_INCLUDE_DIR})
+include_directories(${WIRINGPI_INCLUDE_DIRS})
 
 include_directories(${CMAKE_SOURCE_DIR}/libs/AdafruitStepperMotorHAT_CPP)
 
@@ -50,6 +50,6 @@ set(indi_amh_focuser_SRCS
    )
 
 add_executable(indi_amh_focuser ${indi_amh_focuser_SRCS})
-target_link_libraries(indi_amh_focuser indidriver AdafruitStepperMotorHAT wiringPi pthread crypt rt)
+target_link_libraries(indi_amh_focuser indidriver AdafruitStepperMotorHAT ${WIRINGPI_LIBRARIES} pthread crypt rt)
 install(TARGETS indi_amh_focuser RUNTIME DESTINATION bin)
 install(FILES indi_amh_focuser.xml DESTINATION ${INDI_DATA_DIR})
