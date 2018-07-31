@@ -32,7 +32,7 @@ add_dependencies(AdafruitStepperMotorHAT libAdafruitStepperMotorHAT)
 ################ AdafruitStepperMotorHAT ################
 
 ExternalProject_Add(libAdafruitStepperMotorHAT
-    GIT_REPOSITORY "https://github.com/rkaczorek/AdafruitStepperMotorHAT_CPP.git"
+    GIT_REPOSITORY "https://github.com/Ctibor/AdafruitStepperMotorHAT_CPP.git"
     GIT_TAG "master"
     SOURCE_DIR ${CMAKE_SOURCE_DIR}/libs/AdafruitStepperMotorHAT_CPP
     PREFIX ${CMAKE_CURRENT_BINARY_DIR}/libs/AdafruitStepperMotorHAT_CPP
